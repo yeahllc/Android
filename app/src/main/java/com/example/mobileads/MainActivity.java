@@ -16,15 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
         YeahAdsManager.init(MainActivity.this);
 
-        ((Button) findViewById(R.id.interstitialAd)).setOnClickListener(view -> {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    YeahAdsManager.showIntImage();
-                }
-            }, 1200);
-        });
-
 
         ((Button) findViewById(R.id.bannerAd)).setOnClickListener(view -> {
             new Handler().postDelayed(new Runnable() {
@@ -35,18 +26,15 @@ public class MainActivity extends AppCompatActivity {
             }, 1200);
         });
 
-
-        //Load and show the Interstitial Video
-        ((Button) findViewById(R.id.interstitialVideoAd)).setOnClickListener(view -> {
+        ((Button) findViewById(R.id.interstitialAd)).setOnClickListener(view -> {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-
                     YeahAdsManager.showInterstitialYeahAds();
-
                 }
-            }, 1500);
+            }, 1200);
         });
+
 
         //Load and show the Rewarded Video
         ((Button) findViewById(R.id.rewardedVideoAd)).setOnClickListener(view -> {

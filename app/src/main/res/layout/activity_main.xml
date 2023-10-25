@@ -10,7 +10,7 @@
         android:id="@+id/bannerAd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="200dp"
         android:text="@string/banner_ad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,15 +26,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bannerAd" />
 
-    <Button
-        android:id="@+id/interstitialVideoAd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="@string/intertstial_video_ad"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/interstitialAd" />
 
     <Button
         android:id="@+id/rewardedVideoAd"
@@ -44,6 +35,6 @@
         android:text="@string/rewarded_video_ad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/interstitialVideoAd" />
+        app:layout_constraintTop_toBottomOf="@id/interstitialAd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,20 +7,18 @@ import android.widget.Toast;
 import com.ad.sdk.adserver.Listener.AdViewListener;
 import com.ad.sdk.adserver.Listener.BannerListener;
 import com.ad.sdk.adserver.Listener.YeahInterstitialAdShowListener;
-import com.ad.sdk.adserver.Listener.YeahInterstitialImageAdListener;
 import com.ad.sdk.adserver.Listener.YeahInterstitialLoadAdListener;
 import com.ad.sdk.adserver.Listener.YeahRewardedAdLoadListener;
 import com.ad.sdk.adserver.Listener.YeahRewardedAdShowListener;
 import com.ad.sdk.adserver.YeahAdsInitialize;
 import com.ad.sdk.adserver.YeahBannerImageAD;
 import com.ad.sdk.adserver.YeahInterstitial;
-import com.ad.sdk.adserver.YeahInterstitialImage;
 import com.ad.sdk.adserver.YeahRewardedVideo;
 
 
 public class YeahAdsManager {
 
-    private static String myZoneId = "21";
+    private static String myZoneId = "27";
     private static Activity mActivity;
 
     public static void init(Activity appActivity) {
@@ -45,7 +43,9 @@ public class YeahAdsManager {
 
 
     public static void showBanner() {
-        YeahBannerImageAD.show(mActivity, new BannerListener() {
+
+
+        YeahBannerImageAD.show(mActivity, "TOP", new BannerListener() {
             @Override
             public void onYeahAdsAdLoaded() {
                 Log.e(" Banner AD Status :", "" + "Loaded");
@@ -57,38 +57,6 @@ public class YeahAdsManager {
             }
         });
     }
-
-
-    public static void showIntImage() {
-
-        YeahInterstitialImage.show(mActivity, new YeahInterstitialImageAdListener() {
-            @Override
-            public void onYeahAdsAdLoaded() {
-
-            }
-
-            @Override
-            public void onYeahAdsAdFailed() {
-
-            }
-
-            @Override
-            public void onYeahAdsAdShown() {
-
-            }
-
-            @Override
-            public void onYeahAdsAdClicked() {
-
-            }
-
-            @Override
-            public void onYeahAdsAdDismissed() {
-
-            }
-        });
-    }
-
 
     public static void loadInterstitialYeahAds() {
 
@@ -163,20 +131,24 @@ public class YeahAdsManager {
 
 
     public static void showRewardedYeahAds() {
+
         YeahRewardedVideo.show(mActivity, new YeahRewardedAdShowListener() {
             @Override
             public void onYeahAdsShowFailure() {
                 Log.e("Rewarded Video Show Status :", "" + "Ad show Failure");
+
             }
 
             @Override
             public void onYeahAdsShowStart() {
                 Log.e("Rewarded Video Click Status :", "" + "Ad Showed");
+
             }
 
             @Override
             public void onYeahAdsShowClicked() {
                 Log.e("Rewarded Video Click Status :", "" + "Ad Clicked");
+
             }
 
             @Override
@@ -188,9 +160,9 @@ public class YeahAdsManager {
             @Override
             public void Rewarded(String rewardItem, int rewarded) {
                 Toast.makeText(mActivity, "Reward Point : " + rewarded, Toast.LENGTH_SHORT).show();
+
             }
         });
-
     }
 
 
