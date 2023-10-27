@@ -35,7 +35,8 @@ public class YeahInterstitial {
                 } else {
                     YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdLoaded();
 
-//                    Log.d("SDK", "No Ads");
+                    Log.d("SDK", "No Ads");
+
                 }
             } else {
 
