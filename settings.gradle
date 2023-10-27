@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Mobile Ads"
 include ':app'
-include ':sdk'
