@@ -28,14 +28,14 @@ public class YeahAdsManager {
         new YeahAdsInitialize(mActivity, myZoneId, new AdViewListener() {
             @Override
             public void onInitializationComplete() {
-                Log.e("SDK_Init_Status : ", "" + "Initialization Successfully");
+//                Log.e("SDK_Init_Status : ", "" + "Initialization Successfully");
                 loadInterstitialYeahAds();
                 loadRewardedYeahAds();
             }
 
             @Override
             public void onInitializationFailure() {
-                Log.e("SDK_Init_Status : ", "" + "Initialization Failed");
+//                Log.e("SDK_Init_Status : ", "" + "Initialization Failed");
             }
         });
 
@@ -63,12 +63,12 @@ public class YeahAdsManager {
         YeahInterstitial.load(mActivity, new YeahInterstitialLoadAdListener() {
             @Override
             public void onYeahAdsAdLoaded() {
-                Log.e("Interstitial Video Load Status :", "" + "Loaded");
+//                Log.e("Interstitial Video Load Status :", "" + "Loaded");
             }
 
             @Override
             public void onYeahAdsAdFailed() {
-                Log.e("Interstitial Video Load Status :", "" + "Failed");
+//                Log.e("Interstitial Video Load Status :", "" + "Failed");
             }
         });
 
@@ -79,12 +79,12 @@ public class YeahAdsManager {
         YeahRewardedVideo.load(mActivity, new YeahRewardedAdLoadListener() {
             @Override
             public void onYeahAdsAdLoaded() {
-                Log.e("Rewarded Video Load Status :", "" + "Loaded");
+//                Log.e("Rewarded Video Load Status :", "" + "Loaded");
             }
 
             @Override
             public void onYeahAdsAdFailed() {
-                Log.e("Rewarded Video Load Status :", "" + "Failed");
+//                Log.e("Rewarded Video Load Status :", "" + "Failed");
             }
         });
 
@@ -96,32 +96,32 @@ public class YeahAdsManager {
         YeahInterstitial.show(mActivity, new YeahInterstitialAdShowListener() {
             @Override
             public void onYeahAdsShowFailure() {
-                Log.e("Interstitial Video Show Status :", "" + "Ad Failed");
+//                Log.e("Interstitial Video Show Status :", "" + "Ad Failed");
 
             }
 
             @Override
             public void onYeahAdsShowStart() {
-                Log.e("Interstitial Video Show Status :", "" + "Ad Showed");
+//                Log.e("Interstitial Video Show Status :", "" + "Ad Showed");
 
 
             }
 
             @Override
             public void onYeahAdsShowClick() {
-                Log.e("Interstitial Video Click Status :", "" + "Ad Clicked");
+//                Log.e("Interstitial Video Click Status :", "" + "Ad Clicked");
 
             }
 
             @Override
             public void onYeahAdsShowComplete() {
-                Log.e("Interstitial Video Show Status :", "" + "Ad Completed");
+//                Log.e("Interstitial Video Show Status :", "" + "Ad Completed");
 
             }
 
             @Override
             public void onYeahAdsDismissed() {
-                Log.e("Interstitial Video Show Status :", "" + "Ad Dismissed");
+//                Log.e("Interstitial Video Show Status :", "" + "Ad Dismissed");
 
             }
 
@@ -135,25 +135,25 @@ public class YeahAdsManager {
         YeahRewardedVideo.show(mActivity, new YeahRewardedAdShowListener() {
             @Override
             public void onYeahAdsShowFailure() {
-                Log.e("Rewarded Video Show Status :", "" + "Ad show Failure");
+//                Log.e("Rewarded Video Show Status :", "" + "Ad show Failure");
 
             }
 
             @Override
             public void onYeahAdsShowStart() {
-                Log.e("Rewarded Video Click Status :", "" + "Ad Showed");
+//                Log.e("Rewarded Video Click Status :", "" + "Ad Showed");
 
             }
 
             @Override
             public void onYeahAdsShowClicked() {
-                Log.e("Rewarded Video Click Status :", "" + "Ad Clicked");
+//                Log.e("Rewarded Video Click Status :", "" + "Ad Clicked");
 
             }
 
             @Override
             public void onYeahAdsShowComplete() {
-                Log.e("Rewarded Video Show Status :", "" + "Ad Closed");
+//                Log.e("Rewarded Video Show Status :", "" + "Ad Closed");
 
             }
 
