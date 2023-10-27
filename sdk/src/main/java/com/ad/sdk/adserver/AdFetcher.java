@@ -86,7 +86,7 @@ public class AdFetcher {
             Cdlog.d(Cdlog.baseLogTag, Cdlog.getString(R.string.stop));
             timePausedAt = System.currentTimeMillis();
         } catch (Exception r) {
-            Log.d("DAJX SDK", "R" + r);
+//            Log.d("DAJX SDK", "R" + r);
         }
     }
 
@@ -104,7 +104,7 @@ public class AdFetcher {
     @SuppressLint("NewApi")
     private synchronized void makeTasker() {
 
-        Log.d("mSDK Debug", "Make Tasker Called");
+//        Log.d("mSDK Debug", "Make Tasker Called");
 
         //Start a scheduler to execute recurring tasks
         scheduler = Executors.newScheduledThreadPool(Settings.getSettings().FETCH_THREAD_COUNT);
@@ -151,7 +151,7 @@ public class AdFetcher {
 
         }
 
-        Log.d("mSDK Debug", "Period::" + msPeriod);
+//        Log.d("mSDK Debug", "Period::" + msPeriod);
     }
 
 

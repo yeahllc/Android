@@ -4,6 +4,7 @@ class Config {
 
 
     //Live server
+//    public static String ADSERVER_URL = "https://app.yeahads.net/api/request_sdk.php";
     public static String ADSERVER_URL = "https://app.yeahads.net/api/request_sdk.php";
 
 
@@ -12,7 +13,7 @@ class Config {
 
 
     // AD REQUEST API RESPONSE - JSON FIELDS LIST
-
+    // Ad Request Api
     final static public String TAG_AD_RESPONSE = "response";
     final static public String TAG_ADS = "ads";
     final static public String TAG_CLICK_URL = "click_url";
