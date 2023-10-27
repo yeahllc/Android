@@ -17,7 +17,7 @@ public class Yeah_HTMLAD {
     @SuppressLint("SetJavaScriptEnabled")
     public static void show(Context adViewContext, BannerListener listener) {
 
-
+        //HTML Activaty = Sample Code
         Activity mActivity = (Activity) adViewContext;
 
         //Add this wherever your code needs to add the ad
