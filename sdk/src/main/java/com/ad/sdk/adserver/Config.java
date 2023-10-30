@@ -4,7 +4,7 @@ class Config {
 
 
     //Live server
-//    public static String ADSERVER_URL = "https://app.yeahads.net/api/request_sdk.php";
+    //Live Serever
     public static String ADSERVER_URL = "https://app.yeahads.net/api/request_sdk.php";
 
 
