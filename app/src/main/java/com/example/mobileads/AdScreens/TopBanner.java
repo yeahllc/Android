@@ -20,7 +20,7 @@ public class TopBanner extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                YeahAdsManager.showTopBanner();
+                YeahAdsManager.showTopBanner(TopBanner.this);
             }
         }, 1200);
     }

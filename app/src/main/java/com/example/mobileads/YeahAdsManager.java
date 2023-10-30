@@ -51,8 +51,8 @@ public class YeahAdsManager {
     }
 
 
-    public static void showBanner() {
-        YeahBannerImageAD.show(mActivity, YeahBannerPosition.TOP, new BannerListener() {
+    public static void showBanner(Activity appActivity) {
+        YeahBannerImageAD.show(appActivity, YeahBannerPosition.TOP, new BannerListener() {
             @Override
             public void onYeahAdsAdLoaded() {
                 Log.e(" Banner AD Status :", "" + "Loaded");
@@ -99,9 +99,9 @@ public class YeahAdsManager {
     }
 
 
-    public static void showInterstitialYeahAds() {
+    public static void showInterstitialYeahAds(Activity appActivity) {
 
-        YeahInterstitial.show(mActivity, new YeahInterstitialAdShowListener() {
+        YeahInterstitial.show(appActivity, new YeahInterstitialAdShowListener() {
             @Override
             public void onYeahAdsShowFailure() {
 //                Log.e("Interstitial Video Show Status :", "" + "Ad Failed");
@@ -138,9 +138,9 @@ public class YeahAdsManager {
     }
 
 
-    public static void showRewardedYeahAds() {
+    public static void showRewardedYeahAds(Activity appActivity) {
 
-        YeahRewardedVideo.show(mActivity, new YeahRewardedAdShowListener() {
+        YeahRewardedVideo.show(appActivity, new YeahRewardedAdShowListener() {
             @Override
             public void onYeahAdsShowFailure() {
 //                Log.e("Rewarded Video Show Status :", "" + "Ad show Failure");
@@ -174,8 +174,8 @@ public class YeahAdsManager {
     }
 
 
-    public static void showTopBanner() {
-        YeahTopBannerAD.show(mActivity, new BannerListener() {
+    public static void showTopBanner(Activity appActivity) {
+        YeahTopBannerAD.show(appActivity, new BannerListener() {
             @Override
             public void onYeahAdsAdLoaded() {
                 Log.e(" Top Banner AD Status :", "" + "Loaded");
@@ -191,8 +191,8 @@ public class YeahAdsManager {
 
     }
 
-    public static void showBottomSlider() {
-        YeahBottomSliderAd.show(mActivity, new YeahBottomSliderAdListener() {
+    public static void showBottomSlider(Activity appActivity) {
+        YeahBottomSliderAd.show(appActivity, new YeahBottomSliderAdListener() {
             @Override
             public void onYeahAdsAdLoaded() {
 
@@ -220,8 +220,8 @@ public class YeahAdsManager {
         });
     }
 
-    public static void showHTML() {
-        YeahHTMLAD.show(mActivity, new BannerListener() {
+    public static void showHTML(Activity appActivity) {
+        YeahHTMLAD.show(appActivity, new BannerListener() {
             @Override
             public void onYeahAdsAdLoaded() {
 
@@ -236,8 +236,8 @@ public class YeahAdsManager {
     }
 
 
-    public static void showHTML_5() {
-        YeahHTML_5_Ad.show(mActivity, new BannerListener() {
+    public static void showHTML_5(Activity appActivity) {
+        YeahHTML_5_Ad.show(appActivity, new BannerListener() {
             @Override
             public void onYeahAdsAdLoaded() {
 
@@ -250,12 +250,12 @@ public class YeahAdsManager {
         });
     }
 
-    public static void showInArticle(StyledPlayerView playerView) {
-        new YeahInArticleVideoAds().loadAd(playerView, mActivity);
+    public static void showInArticle(StyledPlayerView playerView, Activity appActivity) {
+        new YeahInArticleVideoAds().loadAd(playerView, appActivity);
     }
 
-    public static void redirectAds() {
-        YeahDirectLinkAd.show(mActivity, "Link Title", new BannerListener() {
+    public static void redirectAds(Activity appActivity) {
+        YeahDirectLinkAd.show(appActivity, "Link Title", new BannerListener() {
             @Override
             public void onYeahAdsAdLoaded() {
 

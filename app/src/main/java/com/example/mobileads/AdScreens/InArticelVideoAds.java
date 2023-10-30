@@ -29,7 +29,7 @@ public class InArticelVideoAds extends AppCompatActivity {
             @Override
             public void run() {
 
-                YeahAdsManager.showInArticle(adView);
+                YeahAdsManager.showInArticle(adView, InArticelVideoAds.this);
             }
         }, 1500);
     }

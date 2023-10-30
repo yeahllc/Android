@@ -21,7 +21,7 @@ public class HTMLAd extends AppCompatActivity {
             @Override
             public void run() {
 
-                YeahAdsManager.showHTML();
+                YeahAdsManager.showHTML(HTMLAd.this);
             }
         }, 1500);
     }

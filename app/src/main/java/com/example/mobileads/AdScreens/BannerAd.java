@@ -19,7 +19,7 @@ public class BannerAd extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                YeahAdsManager.showBanner();
+                YeahAdsManager.showBanner(BannerAd.this);
             }
         }, 1200);
     }

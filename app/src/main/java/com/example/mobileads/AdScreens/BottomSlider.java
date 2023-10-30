@@ -21,7 +21,7 @@ public class BottomSlider extends AppCompatActivity {
             @Override
             public void run() {
 
-                YeahAdsManager.showBottomSlider();
+                YeahAdsManager.showBottomSlider(BottomSlider.this);
             }
         }, 1500);
     }

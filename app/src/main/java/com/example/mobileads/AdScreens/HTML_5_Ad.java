@@ -21,7 +21,7 @@ public class HTML_5_Ad extends AppCompatActivity {
             @Override
             public void run() {
 
-                YeahAdsManager.showHTML_5();
+                YeahAdsManager.showHTML_5(HTML_5_Ad.this);
             }
         }, 1500);
     }

@@ -20,7 +20,7 @@ public class RedirectLinkAd extends AppCompatActivity {
             @Override
             public void run() {
 
-                YeahAdsManager.redirectAds();
+                YeahAdsManager.redirectAds(RedirectLinkAd.this);
             }
         }, 1500);
     }

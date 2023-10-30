@@ -21,7 +21,7 @@ public class RewardedAds extends AppCompatActivity {
             @Override
             public void run() {
 
-                YeahAdsManager.showRewardedYeahAds();
+                YeahAdsManager.showRewardedYeahAds(RewardedAds.this);
             }
         }, 1500);
     }

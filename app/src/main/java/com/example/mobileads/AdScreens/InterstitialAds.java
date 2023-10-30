@@ -20,7 +20,7 @@ public class InterstitialAds extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                YeahAdsManager.showInterstitialYeahAds();
+                YeahAdsManager.showInterstitialYeahAds(InterstitialAds.this);
             }
         }, 1200);
     }
