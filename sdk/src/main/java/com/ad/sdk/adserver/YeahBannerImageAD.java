@@ -20,7 +20,7 @@ public class YeahBannerImageAD {
     static Context context;
 
     @SuppressLint("SetJavaScriptEnabled")
-    public static void show(Context adViewContext, String position, BannerListener listener) {
+    public static void show(Context adViewContext, YeahBannerPosition position, BannerListener listener) {
 
         context = adViewContext;
         Activity mActivity = (Activity) adViewContext;
@@ -116,7 +116,7 @@ public class YeahBannerImageAD {
         layout.addView(webView);
 
 
-        if (position.equalsIgnoreCase("TOP")) {
+        if (position == YeahBannerPosition.TOP) {
             ViewGroup.LayoutParams bannerLayout = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.CENTER_HORIZONTAL);
             mActivity.addContentView(layout, bannerLayout);
         } else {

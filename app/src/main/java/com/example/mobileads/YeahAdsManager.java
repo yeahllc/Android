@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.ad.sdk.adserver.YeahBannerPosition;
 import com.ad.sdk.adserver.Listener.AdViewListener;
 import com.ad.sdk.adserver.Listener.BannerListener;
 import com.ad.sdk.adserver.Listener.YeahInterstitialAdShowListener;
@@ -43,9 +44,7 @@ public class YeahAdsManager {
 
 
     public static void showBanner() {
-
-
-        YeahBannerImageAD.show(mActivity, "TOP", new BannerListener() {
+        YeahBannerImageAD.show(mActivity, YeahBannerPosition.TOP, new BannerListener() {
             @Override
             public void onYeahAdsAdLoaded() {
                 Log.e(" Banner AD Status :", "" + "Loaded");
@@ -58,6 +57,10 @@ public class YeahAdsManager {
         });
     }
 
+
+
+
+    
     public static void loadInterstitialYeahAds() {
 
         YeahInterstitial.load(mActivity, new YeahInterstitialLoadAdListener() {
