@@ -1,6 +1,6 @@
 package com.ad.sdk.adserver.Listener;
 
-public interface YeahInterstitialImageAdListener {
+public interface YeahBottomSliderAdListener {
 
     void onYeahAdsAdLoaded();
 

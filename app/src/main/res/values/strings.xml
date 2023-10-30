@@ -3,5 +3,11 @@
     <string name="click_ad">Click Ad</string>
     <string name="intertstial_ad">Intertstirtial Ads</string>
     <string name="rewarded_video_ad">Rewarded Video Ad</string>
+    <string name="redirect_ad">Redirect Ad</string>
     <string name="banner_ad">Banner Ad</string>
+    <string name="topBanner_ad">Top Banner Ad</string>
+    <string name="html_ad">HTML Ad</string>
+    <string name="html5_ad">HTML 5 Ad</string>
+    <string name="bottomSlider_ad">Bottom Slider Ad</string>
+    <string name="inArticle_ad">InArticle Ad</string>
 </resources>

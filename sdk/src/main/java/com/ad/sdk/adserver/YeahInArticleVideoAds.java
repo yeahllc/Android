@@ -20,6 +20,7 @@ import com.google.android.exoplayer2.source.MediaSourceFactory;
 import com.google.android.exoplayer2.ui.StyledPlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSource;
+import com.google.android.exoplayer2.util.Util;
 
 public class YeahInArticleVideoAds extends AppCompatActivity implements Player.Listener {
 
@@ -40,13 +41,13 @@ public class YeahInArticleVideoAds extends AppCompatActivity implements Player.L
         String ad_check = sharedPreferences.getString("adCheck", "0");
 
         if (ad_check.equalsIgnoreCase("1")) {
-            loadRadiosAds(playerView, getApplicationContext());
+            loadAd(playerView, getApplicationContext());
         } else {
             Log.e("Ad Shown Status :", "Targeting Not Match");
         }
     }
 
-    public void loadRadiosAds(StyledPlayerView playerView, Context context) {
+    public void loadAd(StyledPlayerView playerView, Context context) {
         MultiDex.install(context);
         playerView.setControllerAutoShow(false);
         // Create an AdsLoader.
@@ -102,6 +103,65 @@ public class YeahInArticleVideoAds extends AppCompatActivity implements Player.L
 
         }
     }
+
+//    private void releasePlayer() {
+//        adsLoader.setPlayer(null);
+//        playerView.setPlayer(null);
+//        player.release();
+//        player = null;
+//    }
+//
+//
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        if (Util.SDK_INT > 23) {
+//            if (playerView != null) {
+//                playerView.onResume();
+//                YeahLoadInterstitial.int_show_listener.onYeahAdsShowStart();
+//            }
+//        }
+//    }
+//
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        if (Util.SDK_INT <= 23) {
+////            initializePlayer();
+//            if (playerView != null) {
+//                playerView.onResume();
+//            }
+//        }
+//    }
+//
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//        if (Util.SDK_INT <= 23) {
+//            if (playerView != null) {
+//                playerView.onPause();
+//            }
+////            releasePlayer();
+//        }
+//    }
+//
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        if (Util.SDK_INT > 23) {
+//            if (playerView != null) {
+//                playerView.onPause();
+//            }
+//            releasePlayer();
+//        }
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        adsLoader.release();
+//    }
+
 }
 
 

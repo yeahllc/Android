@@ -4,22 +4,30 @@ import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.ad.sdk.adserver.YeahBannerPosition;
 import com.ad.sdk.adserver.Listener.AdViewListener;
 import com.ad.sdk.adserver.Listener.BannerListener;
+import com.ad.sdk.adserver.Listener.YeahBottomSliderAdListener;
 import com.ad.sdk.adserver.Listener.YeahInterstitialAdShowListener;
 import com.ad.sdk.adserver.Listener.YeahInterstitialLoadAdListener;
 import com.ad.sdk.adserver.Listener.YeahRewardedAdLoadListener;
 import com.ad.sdk.adserver.Listener.YeahRewardedAdShowListener;
 import com.ad.sdk.adserver.YeahAdsInitialize;
 import com.ad.sdk.adserver.YeahBannerImageAD;
+import com.ad.sdk.adserver.YeahBannerPosition;
+import com.ad.sdk.adserver.YeahBottomSliderAd;
+import com.ad.sdk.adserver.YeahDirectLinkAd;
+import com.ad.sdk.adserver.YeahHTMLAD;
+import com.ad.sdk.adserver.YeahHTML_5_Ad;
+import com.ad.sdk.adserver.YeahInArticleVideoAds;
 import com.ad.sdk.adserver.YeahInterstitial;
 import com.ad.sdk.adserver.YeahRewardedVideo;
+import com.ad.sdk.adserver.YeahTopBannerAD;
+import com.google.android.exoplayer2.ui.StyledPlayerView;
 
 
 public class YeahAdsManager {
 
-    private static String myZoneId = "27";
+    private static String myZoneId = "36";
     private static Activity mActivity;
 
     public static void init(Activity appActivity) {
@@ -58,9 +66,6 @@ public class YeahAdsManager {
     }
 
 
-
-
-    
     public static void loadInterstitialYeahAds() {
 
         YeahInterstitial.load(mActivity, new YeahInterstitialLoadAdListener() {
@@ -168,5 +173,99 @@ public class YeahAdsManager {
         });
     }
 
+
+    public static void showTopBanner() {
+        YeahTopBannerAD.show(mActivity, new BannerListener() {
+            @Override
+            public void onYeahAdsAdLoaded() {
+                Log.e(" Top Banner AD Status :", "" + "Loaded");
+
+            }
+
+            @Override
+            public void onYeahAdsAdFailed() {
+                Log.e(" Top Banner AD Status :", "" + "Failed");
+
+            }
+        });
+
+    }
+
+    public static void showBottomSlider() {
+        YeahBottomSliderAd.show(mActivity, new YeahBottomSliderAdListener() {
+            @Override
+            public void onYeahAdsAdLoaded() {
+
+            }
+
+            @Override
+            public void onYeahAdsAdFailed() {
+
+            }
+
+            @Override
+            public void onYeahAdsAdShown() {
+
+            }
+
+            @Override
+            public void onYeahAdsAdClicked() {
+
+            }
+
+            @Override
+            public void onYeahAdsAdDismissed() {
+
+            }
+        });
+    }
+
+    public static void showHTML() {
+        YeahHTMLAD.show(mActivity, new BannerListener() {
+            @Override
+            public void onYeahAdsAdLoaded() {
+
+            }
+
+            @Override
+            public void onYeahAdsAdFailed() {
+
+            }
+        });
+
+    }
+
+
+    public static void showHTML_5() {
+        YeahHTML_5_Ad.show(mActivity, new BannerListener() {
+            @Override
+            public void onYeahAdsAdLoaded() {
+
+            }
+
+            @Override
+            public void onYeahAdsAdFailed() {
+
+            }
+        });
+    }
+
+    public static void showInArticle(StyledPlayerView playerView) {
+        new YeahInArticleVideoAds().loadAd(playerView, mActivity);
+    }
+
+    public static void redirectAds() {
+        YeahDirectLinkAd.show(mActivity, "Link Title", new BannerListener() {
+            @Override
+            public void onYeahAdsAdLoaded() {
+
+            }
+
+            @Override
+            public void onYeahAdsAdFailed() {
+
+            }
+        });
+    }
 
 }
