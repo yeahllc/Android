@@ -29,7 +29,7 @@ public class YeahHTMLAD {
         // Create a banner ad
         WebView webView = new WebView(mActivity);
 
-        String HtmlCode = new LoadData().loadBannerImage(mActivity);
+        String HtmlCode = new LoadData().loadHTML(mActivity);
 
         if (HtmlCode.isEmpty()) {
             listener.onYeahAdsAdFailed();

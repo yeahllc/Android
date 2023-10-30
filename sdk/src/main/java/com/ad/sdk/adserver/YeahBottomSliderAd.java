@@ -16,16 +16,16 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
 import com.ad.sdk.R;
-import com.ad.sdk.adserver.Listener.YeahInterstitialImageAdListener;
+import com.ad.sdk.adserver.Listener.YeahBottomSliderAdListener;
 import com.ad.sdk.utils.LoadData;
 
-public class YeahBannerSlider {
+public class YeahBottomSliderAd {
     static PopupWindow pop;
 
     private static final String TAG = "Interstitial_image";
 
     @SuppressLint("SetJavaScriptEnabled")
-    public static void show(Context context, YeahInterstitialImageAdListener listener) {
+    public static void show(Context context, YeahBottomSliderAdListener listener) {
         try {
 
             Activity activity = (Activity) context;
@@ -62,6 +62,13 @@ public class YeahBannerSlider {
                 webView.setVerticalScrollBarEnabled(false);
                 webView.setHorizontalScrollBarEnabled(false);
 
+                webView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        listener.onYeahAdsAdClicked();
+                    }
+                });
+
                 pop = new PopupWindow(customview, ActionBar.LayoutParams.FILL_PARENT, ActionBar.LayoutParams.FILL_PARENT);
                 pop.showAtLocation(relativelayout, Gravity.CENTER, 0, 0);
                 activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -80,6 +87,7 @@ public class YeahBannerSlider {
 
         } catch (Exception e) {
             Log.d("SDK", "BannerSlider Ad Exception:" + e);
+            listener.onYeahAdsAdFailed();
         }
 
 

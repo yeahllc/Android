@@ -13,6 +13,33 @@
         android:theme="@style/Theme.MobileAds"
         tools:targetApi="31">
         <activity
+            android:name=".AdScreens.InArticelVideoAds"
+            android:exported="false" />
+        <activity
+            android:name=".AdScreens.BottomSlider"
+            android:exported="false" />
+        <activity
+            android:name=".AdScreens.RewardedAds"
+            android:exported="false" />
+        <activity
+            android:name=".AdScreens.InterstitialAds"
+            android:exported="false" />
+        <activity
+            android:name=".AdScreens.HTML_5_Ad"
+            android:exported="false" />
+        <activity
+            android:name=".AdScreens.HTMLAd"
+            android:exported="false" />
+        <activity
+            android:name=".AdScreens.RedirectLinkAd"
+            android:exported="false" />
+        <activity
+            android:name=".AdScreens.TopBanner"
+            android:exported="false" />
+        <activity
+            android:name=".AdScreens.BannerAd"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
