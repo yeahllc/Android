@@ -2,7 +2,6 @@ package com.example.mobileads;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +15,6 @@ import com.example.mobileads.AdScreens.InterstitialAds;
 import com.example.mobileads.AdScreens.RedirectLinkAd;
 import com.example.mobileads.AdScreens.RewardedAds;
 import com.example.mobileads.AdScreens.TopBanner;
-import com.google.android.exoplayer2.ui.StyledPlayerView;
 
 public class MainActivity extends AppCompatActivity {
 
