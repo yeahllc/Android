@@ -12,20 +12,19 @@ import android.widget.LinearLayout;
 import com.ad.sdk.adserver.Listener.BannerListener;
 import com.ad.sdk.utils.LoadData;
 
-public class Yeah_TopBannerAD {
-
+public class YeahHTMLAD {
 
     @SuppressLint("SetJavaScriptEnabled")
     public static void show(Context adViewContext, BannerListener listener) {
 
-
+        //HTML Activaty = Sample Code
         Activity mActivity = (Activity) adViewContext;
 
         //Add this wherever your code needs to add the ad
         LinearLayout layout = new LinearLayout(mActivity);
 
         //Additionally to adjust the position to Bottom
-        layout.setGravity(Gravity.TOP);
+        layout.setGravity(Gravity.BOTTOM);
 
         // Create a banner ad
         WebView webView = new WebView(mActivity);
@@ -62,7 +61,7 @@ public class Yeah_TopBannerAD {
 
         layout.addView(webView);
 
-        ViewGroup.LayoutParams bannerLayout = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.CENTER_HORIZONTAL);
+        ViewGroup.LayoutParams bannerLayout = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
         mActivity.addContentView(layout, bannerLayout);
 
 
@@ -72,5 +71,4 @@ public class Yeah_TopBannerAD {
 
 
     }
-
 }

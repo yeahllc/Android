@@ -21,14 +21,14 @@ import com.google.android.exoplayer2.ui.StyledPlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSource;
 
-public class Yeah_InArticleVideoAds extends AppCompatActivity implements Player.Listener {
+public class YeahInArticleVideoAds extends AppCompatActivity implements Player.Listener {
 
     private ExoPlayer player;
     private ImaAdsLoader adsLoader;
 
     StyledPlayerView playerView;
 
-    public Yeah_InArticleVideoAds() {
+    public YeahInArticleVideoAds() {
 
     }
 

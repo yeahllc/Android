@@ -22,7 +22,7 @@ import com.ad.sdk.adserver.Listener.PopupAdListener;
 import com.ad.sdk.utils.LoadData;
 
 
-public class Yeah_PopupAd {
+public class YeahPopupAd {
     static PopupWindow pop;
     private static final String TAG = "GIFPopupAds";
 
