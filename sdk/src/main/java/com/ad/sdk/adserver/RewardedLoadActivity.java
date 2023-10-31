@@ -62,6 +62,8 @@ public class RewardedLoadActivity extends AppCompatActivity {
 
     private boolean on_pause = false;
 
+    Player.Listener listener;
+
 
     @SuppressLint("QueryPermissionsNeeded")
     @Override
@@ -193,8 +195,7 @@ public class RewardedLoadActivity extends AppCompatActivity {
         // Set PlayWhenReady. If true, content and ads will autoplay.
         player.setPlayWhenReady(true);
 
-
-        player.addListener(new Player.Listener() {
+        listener = new Player.Listener() {
             @Override
             public void onPlaybackStateChanged(int playbackState) {
 
@@ -239,29 +240,33 @@ public class RewardedLoadActivity extends AppCompatActivity {
 
             @Override
             public void onIsPlayingChanged(boolean isPlaying) {
-
-
-                if (isPlaying) {
-                    playerView.postDelayed(this::getCurrentPlayerPosition, 1000);
+                if (player != null) {
+                    if (isPlaying) {
+                        playerView.postDelayed(this::getCurrentPlayerPosition, 1000);
+                    }
                 }
+
             }
 
             private void getCurrentPlayerPosition() {
+                if (player != null) {
+                    getVideoRewardStopTime = (int) player.getCurrentPosition();
+                }
                 if (!on_pause) {
 //                    android.util.Log.e("OnPause Status", String.valueOf(on_pause));
 //
 //                    android.util.Log.e("Player_seconds", String.valueOf(getVideoRewardStopTime));
-                    if (player.isPlaying()) {
-                        getVideoRewardStopTime = (int) player.getCurrentPosition();
-                        playerView.postDelayed(this::getCurrentPlayerPosition, 1000);
-                        if (rewardGrantedTime / 1000 == getVideoRewardStopTime / 1000) {
-                            rewardGranted.setVisibility(View.VISIBLE);
-                        }
+
+                    playerView.postDelayed(this::getCurrentPlayerPosition, 1000);
+                    if (rewardGrantedTime / 1000 == getVideoRewardStopTime / 1000) {
+                        rewardGranted.setVisibility(View.VISIBLE);
                     }
 
                 }
             }
-        });
+        };
+
+        player.addListener(listener);
 
 
     }
@@ -318,6 +323,7 @@ public class RewardedLoadActivity extends AppCompatActivity {
 
                 playerView.onPause();
             }
+            player.removeListener(listener);
             releasePlayer();
         }
     }
@@ -327,7 +333,11 @@ public class RewardedLoadActivity extends AppCompatActivity {
         super.onDestroy();
         adsLoader.release();
         android.util.Log.d("PlayerView", "RewardActivity CLosed");
-
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        player.removeListener(listener);
+    }
 }
