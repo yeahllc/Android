@@ -64,6 +64,8 @@ public class RewardedLoadActivity extends AppCompatActivity {
 
     Player.Listener listener;
 
+    private String dest_type;
+
 
     @SuppressLint("QueryPermissionsNeeded")
     @Override
@@ -117,10 +119,19 @@ public class RewardedLoadActivity extends AppCompatActivity {
 
         destination_url = sharedPreferences1.getString("destinationURL", "www.google.com");
         logoURL = sharedPreferences1.getString("logoURL", "https://cpng.pikpng.com/pngl/s/209-2090783_own-logo-insert-love-food-hate-waste-logo.png");
+        dest_type = sharedPreferences.getString("dest_type", "playstore");
+
         try {
             decodeDest_url = URLDecoder.decode(destination_url, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
+        }
+
+
+        if (dest_type.equalsIgnoreCase("playstore")) {
+            ((Button) findViewById(R.id.desc_btn)).setText("Install Now");
+        } else {
+            ((Button) findViewById(R.id.desc_btn)).setText("Learn More");
         }
 
         ((Button) findViewById(R.id.desc_btn)).setOnClickListener(view -> {

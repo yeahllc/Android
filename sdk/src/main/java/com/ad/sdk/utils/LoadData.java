@@ -67,12 +67,12 @@ public class LoadData {
         return adTYPE;
     }
 
-    public void saveInterstitialVideo(Context context, String url, String screenType, String ad_check, String dest_url, String logoURL) {
+    public void saveInterstitialVideo(Context context, String url, String screenType, String ad_check, String dest_url, String logoURL, String dest_type) {
 
         // method for saving the data in array list.
         // creating a variable for storing data in
         // shared preferences.
-        System.out.println("@@ InterstitialVideo save url" + url);
+//        System.out.println("@@ InterstitialVideo save url : " + url);
         SharedPreferences sharedPreferences = context.getSharedPreferences("InterstitialVideo", MODE_PRIVATE);
 
         // creating a variable for editor to
@@ -85,6 +85,7 @@ public class LoadData {
         editor.putString("ad_check", ad_check);
         editor.putString("destination_url", dest_url);
         editor.putString("logoURL", logoURL);
+        editor.putString("dest_type", dest_type);
 
         // below line is to apply changes
         // and save data in shared prefs.
@@ -224,7 +225,7 @@ public class LoadData {
 
 
     //InterstitialImage
-    public void saveInterstitialImage(Context context, String url, String ad_check, String destinationUrl, String logoURL) {
+    public void saveInterstitialImage(Context context, String url, String ad_check, String destinationUrl, String logoURL, String dest_type) {
 
         logoutInterstitialImageAction(context);
 
@@ -244,6 +245,7 @@ public class LoadData {
         editor.putString("DestinationURL", destinationUrl);
         editor.putString("LogoURL", logoURL);
         editor.putString("ad_check", ad_check);
+        editor.putString("dest_type", dest_type);
 
         editor.apply();
 
@@ -271,7 +273,7 @@ public class LoadData {
     }
 
 
-    public void saveRewardedVideo(Context context, String url, String screenType, String ad_check, String destinationURL, String logoURL) {
+    public void saveRewardedVideo(Context context, String url, String screenType, String ad_check, String destinationURL, String logoURL, String dest_type) {
 
         logoutRewardedVideoAction(context);
 
@@ -292,6 +294,7 @@ public class LoadData {
         editor.putString("ad_check", ad_check);
         editor.putString("destinationURL", destinationURL);
         editor.putString("logoURL", logoURL);
+        editor.putString("dest_type", dest_type);
 
         // below line is to apply changes
         // and save data in shared prefs.

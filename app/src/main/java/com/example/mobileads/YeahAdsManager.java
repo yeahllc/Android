@@ -37,14 +37,14 @@ public class YeahAdsManager {
         new YeahAdsInitialize(mActivity, myZoneId, new AdViewListener() {
             @Override
             public void onInitializationComplete() {
-//                Log.e("SDK_Init_Status : ", "" + "Initialization Successfully");
+                Log.e("SDK_Init_Status : ", "" + "Initialization Successfully");
                 loadInterstitialYeahAds();
                 loadRewardedYeahAds();
             }
 
             @Override
             public void onInitializationFailure() {
-//                Log.e("SDK_Init_Status : ", "" + "Initialization Failed");
+                Log.e("SDK_Init_Status : ", "" + "Initialization Failed");
             }
         });
 
@@ -99,9 +99,9 @@ public class YeahAdsManager {
     }
 
 
-    public static void showInterstitialYeahAds(Activity appActivity) {
+    public static void showInterstitialYeahAds() {
 
-        YeahInterstitial.show(appActivity, new YeahInterstitialAdShowListener() {
+        YeahInterstitial.show(mActivity, new YeahInterstitialAdShowListener() {
             @Override
             public void onYeahAdsShowFailure() {
 //                Log.e("Interstitial Video Show Status :", "" + "Ad Failed");

@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -46,6 +45,10 @@ public class InterstitialLoadActivity extends AppCompatActivity {
 
     private LinearLayout suggestionPart;
 
+    private String dest_type;
+
+    String ad_url, screenType;
+
 
     @SuppressLint("QueryPermissionsNeeded")
     @Override
@@ -73,8 +76,13 @@ public class InterstitialLoadActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("InterstitialVideo", MODE_PRIVATE);
 
+        ad_url = sharedPreferences.getString("InterstitialVideo_URL", "");
+        screenType = sharedPreferences.getString("screenType", "");
+
         destination_url = sharedPreferences.getString("destination_url", "www.google.com");
         logoURL = sharedPreferences.getString("logoURL", "https://cpng.pikpng.com/pngl/s/209-2090783_own-logo-insert-love-food-hate-waste-logo.png");
+        dest_type = sharedPreferences.getString("dest_type", "playstore");
+
 
         try {
             decodeDest_url = URLDecoder.decode(destination_url, "UTF-8");
@@ -82,8 +90,12 @@ public class InterstitialLoadActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-
-        Log.e("DestinationURL", "" + decodeDest_url);
+        if (dest_type.equalsIgnoreCase("playstore")) {
+            ((Button) findViewById(R.id.desc_btn)).setText("Install Now");
+        } else {
+            ((Button) findViewById(R.id.desc_btn)).setText("Learn More");
+        }
+//        Log.e("DestinationURL", "" + decodeDest_url);
 
         ((Button) findViewById(R.id.desc_btn)).setOnClickListener(view -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(decodeDest_url));
@@ -117,12 +129,8 @@ public class InterstitialLoadActivity extends AppCompatActivity {
         playerView.setPlayer(player);
         adsLoader.setPlayer(player);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("InterstitialVideo", MODE_PRIVATE);
-        String ad_url = sharedPreferences.getString("InterstitialVideo_URL", "");
-        String screenTpye = sharedPreferences.getString("screenType", "");
 
-
-        if (screenTpye.equals("portrait")) {
+        if (screenType.equals("portrait")) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
             if (getSupportActionBar() != null) {
                 getSupportActionBar().show();

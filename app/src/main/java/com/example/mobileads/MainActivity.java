@@ -2,6 +2,7 @@ package com.example.mobileads;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         ((Button) findViewById(R.id.interstitialAd)).setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, InterstitialAds.class));
             finish();
+
         });
 
 
@@ -92,6 +94,13 @@ public class MainActivity extends AppCompatActivity {
             finish();
 
         });
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                YeahAdsManager.showInterstitialYeahAds();
+            }
+        }, 2300);
 
 
     }

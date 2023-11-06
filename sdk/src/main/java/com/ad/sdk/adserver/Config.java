@@ -3,7 +3,6 @@ package com.ad.sdk.adserver;
 class Config {
 
 
-    //Live server
     //Live Serever
     public static String ADSERVER_URL = "https://app.yeahads.net/api/request_sdk.php";
 

@@ -168,12 +168,13 @@ public class AdResponse {
                                     interstitialImageTag = jsonObj.getString("ad_tag");
                                     String destination_url = jsonObj.getString("click_url");
                                     String logo_url = jsonObj.getString("logourl");
+                                    String dest_type = jsonObj.getString("dest_type");
 
                                     Log.d("SDK", "interstitialImageTag" + interstitialImageTag);
 
                                     new LoadData().saveAdType(context, ad_type);
 
-                                    new LoadData().saveInterstitialImage(context, interstitialImageTag, ad_check, destination_url, logo_url);
+                                    new LoadData().saveInterstitialImage(context, interstitialImageTag, ad_check, destination_url, logo_url, dest_type);
 
                                 }
 
@@ -184,6 +185,7 @@ public class AdResponse {
                                     String ad_check = jsonObj.getString("ad_check");
                                     String destination_url = jsonObj.getString("click_url");
                                     String logo_url = jsonObj.getString("logourl");
+                                    String dest_type = jsonObj.getString("dest_type");
 
 
                                     if (ad_check.equalsIgnoreCase("1")) {
@@ -210,7 +212,7 @@ public class AdResponse {
                                     editor.putString("amount", amount);
                                     editor.apply();
 
-                                    new LoadData().saveRewardedVideo(context, rewardedVideoTag, screenType, ad_check, destination_url, logo_url);
+                                    new LoadData().saveRewardedVideo(context, rewardedVideoTag, screenType, ad_check, destination_url, logo_url, dest_type);
 
                                 }
 
@@ -239,6 +241,7 @@ public class AdResponse {
                                     String screenType = jsonObj.getString("layout");
                                     String destination_url = jsonObj.getString("click_url");
                                     String logo_url = jsonObj.getString("logourl");
+                                    String dest_type = jsonObj.getString("dest_type");
 
 
                                     if (ad_check.equalsIgnoreCase("1")) {
@@ -249,9 +252,10 @@ public class AdResponse {
                                         Log.e("InterstitialVideo Status", "AD NOT SHOWN..");
                                     }
 
+                                    new LoadData().saveInterstitialVideo(context, interstitialVideoTag, screenType, ad_check, destination_url, logo_url, dest_type);
+
                                     new LoadData().saveAdType(context, ad_type);
 
-                                    new LoadData().saveInterstitialVideo(context, interstitialVideoTag, screenType, ad_check, destination_url, logo_url);
 
                                 } else {
                                     imp_url = URLDecoder.decode(jsonObj.getString(Config.TAG_BEACON_URL), "UTF-8");

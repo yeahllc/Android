@@ -12,6 +12,8 @@ import com.ad.sdk.utils.LoadData;
 
 public class YeahInterstitial {
 
+
+    static String ad_url;
     public static YeahInterstitialLoadAdListener interstitialVideoAdListener = null;
 
     public static void setInterstitialVideoAdListener(YeahInterstitialLoadAdListener interstitialVideoAdListener) {
@@ -22,14 +24,11 @@ public class YeahInterstitial {
         try {
             setInterstitialVideoAdListener(InterstitialLoadListener);
 
-//            String ad_check = sharedPreferences.getString("ad_check", "0");
-
-
             String getADType = new LoadData().getAdType(context);
 
             if (getADType.equalsIgnoreCase("INTERSTITIAL_VID")) {
                 SharedPreferences sharedPreferences = context.getSharedPreferences("InterstitialVideo", MODE_PRIVATE);
-                String ad_url = sharedPreferences.getString("InterstitialVideo_URL", "");
+                ad_url = sharedPreferences.getString("InterstitialVideo_URL", "");
                 if (ad_url.length() > 0) {
                     YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdLoaded();
                 } else {

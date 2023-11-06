@@ -43,6 +43,7 @@ public class YeahInterstitialImage {
 
             String destination_URL = URLDecoder.decode(sharedPreferences.getString("DestinationURL", "www.google.com"), "UTF-8");
             String logoURL = sharedPreferences.getString("LogoURL", "https://cpng.pikpng.com/pngl/s/209-2090783_own-logo-insert-love-food-hate-waste-logo.png");
+            String dest_type = sharedPreferences.getString("dest_type", "playstore");
 
             if (ad_check.equalsIgnoreCase("0")) {
                 Log.e("Ad STATUS :", "Not Showing");
@@ -59,6 +60,12 @@ public class YeahInterstitialImage {
                 ImageView logo = (ImageView) customview.findViewById(R.id.logo);
 
                 Button des_btn = (Button) customview.findViewById(R.id.desc_btn);
+
+                if (dest_type.equals("playstore")) {
+                    des_btn.setText("Install Now");
+                } else {
+                    des_btn.setText("Learn More");
+                }
                 des_btn.setOnClickListener(view -> {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(destination_URL));
                     new Handler().postDelayed(new Runnable() {
