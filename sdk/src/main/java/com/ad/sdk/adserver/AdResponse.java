@@ -51,7 +51,7 @@ public class AdResponse {
 
         try {
             if (result != null) {
-                adResponseValues = new ArrayList<AdResponseValue>();
+                adResponseValues = new ArrayList<>();
 
                 JSONObject reader = new JSONObject(result);
                 String ad_response = reader.getString(Config.TAG_AD_RESPONSE);
@@ -64,13 +64,15 @@ public class AdResponse {
 
                     for (int i = 0; i < ads.length(); i++) {
                         try {
-                            JSONObject jsonObj = ads.getJSONObject(i);
-
+                            JSONObject jsonObj = null;
+                            try {
+                                jsonObj = ads.getJSONObject(i);
+                            }
+                            catch (Exception e) {
+                                continue;
+                            }
                             String sub_status = jsonObj.getString(Config.TAG_AD_RESPONSE);
-
                             if (sub_status.equalsIgnoreCase("success")) {
-
-
                                 status = "success";
                                 ad_type = jsonObj.getString(Config.TAG_AD_TYPE);
                                 Log.d("dJAXM", "ad_type : " + ad_type);
