@@ -13,7 +13,6 @@ import com.ad.sdk.utils.LoadData;
 public class YeahInterstitial {
 
 
-    static String ad_url;
     public static YeahInterstitialLoadAdListener interstitialVideoAdListener = null;
 
     public static void setInterstitialVideoAdListener(YeahInterstitialLoadAdListener interstitialVideoAdListener) {
@@ -24,27 +23,29 @@ public class YeahInterstitial {
         try {
             setInterstitialVideoAdListener(InterstitialLoadListener);
 
-            String getADType = new LoadData().getAdType(context);
+            String getADType = new LoadData().getAdType(context).trim();
+
+            Log.e("AdType..::", "  " + getADType);
 
             if (getADType.equalsIgnoreCase("INTERSTITIAL_VID")) {
+
                 SharedPreferences sharedPreferences = context.getSharedPreferences("InterstitialVideo", MODE_PRIVATE);
-                ad_url = sharedPreferences.getString("InterstitialVideo_URL", "");
-                if (ad_url.length() > 0) {
-                    YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdLoaded();
+                String ad_url = sharedPreferences.getString("InterstitialVideo_URL", "No Video url");
+                Log.e("adURL..::", "  " + ad_url);
+
+                if (ad_url.equalsIgnoreCase("No Video url")) {
+                    YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdFailed();
                 } else {
                     YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdLoaded();
-
-                    Log.d("SDK", "No Ads");
-
                 }
             } else {
 
-                SharedPreferences sharedPreferences = context.getSharedPreferences("InterstitialImage", MODE_PRIVATE);
-                String ad_url = sharedPreferences.getString("InterstitialImage_URL", "");
-                if (ad_url.length() > 0) {
+                SharedPreferences sharedPreferences1 = context.getSharedPreferences("InterstitialImage", MODE_PRIVATE);
+                String ad_url_img = sharedPreferences1.getString("InterstitialImage_URL", "");
+                if (ad_url_img.length() > 0) {
                     YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdLoaded();
                 } else {
-                    YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdLoaded();
+                    YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdFailed();
 
 //                    Log.d("SDK", "No Ads");
                 }

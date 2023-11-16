@@ -69,16 +69,8 @@ public class LoadData {
 
     public void saveInterstitialVideo(Context context, String url, String screenType, String ad_check, String dest_url, String logoURL, String dest_type) {
 
-        // method for saving the data in array list.
-        // creating a variable for storing data in
-        // shared preferences.
-//        System.out.println("@@ InterstitialVideo save url : " + url);
-        SharedPreferences sharedPreferences = context.getSharedPreferences("InterstitialVideo", MODE_PRIVATE);
-
-        // creating a variable for editor to
-        // store data in shared preferences.
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
+        SharedPreferences sharedPreferences1 = context.getSharedPreferences("InterstitialVideo", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences1.edit();
         // prefs in the form of string.
         editor.putString("InterstitialVideo_URL", url);
         editor.putString("screenType", screenType);
@@ -86,13 +78,9 @@ public class LoadData {
         editor.putString("destination_url", dest_url);
         editor.putString("logoURL", logoURL);
         editor.putString("dest_type", dest_type);
-
-        // below line is to apply changes
-        // and save data in shared prefs.
         editor.apply();
-
-
     }
+
 
     public void logoutInterstitialVideoAction(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("InterstitialVideo", MODE_PRIVATE);
@@ -318,7 +306,7 @@ public class LoadData {
     //InArticle Video Ads
     public void saveInArticleVideo(Context context, String url, String ad_check) {
 
-        logoutInterstitialVideoAction(context);
+        logoutInArticleVideoAction(context);
 
         // method for saving the data in array list.
         // creating a variable for storing data in

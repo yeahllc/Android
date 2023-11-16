@@ -248,13 +248,15 @@ public class AdResponse {
                                         interstitialVideoTag = jsonObj.getString("ad_tag");
                                         Log.d("Interstitial Ads : ", interstitialVideoTag);
                                         Log.e("InterstitialVideo Status", "AD SHOWN..");
+
                                     } else {
                                         Log.e("InterstitialVideo Status", "AD NOT SHOWN..");
                                     }
 
-                                    new LoadData().saveInterstitialVideo(context, interstitialVideoTag, screenType, ad_check, destination_url, logo_url, dest_type);
 
                                     new LoadData().saveAdType(context, ad_type);
+
+                                    new LoadData().saveInterstitialVideo(context, interstitialVideoTag, screenType, ad_check, destination_url, logo_url, dest_type);
 
 
                                 } else {

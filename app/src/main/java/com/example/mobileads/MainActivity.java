@@ -12,7 +12,6 @@ import com.example.mobileads.AdScreens.BottomSlider;
 import com.example.mobileads.AdScreens.HTMLAd;
 import com.example.mobileads.AdScreens.HTML_5_Ad;
 import com.example.mobileads.AdScreens.InArticelVideoAds;
-import com.example.mobileads.AdScreens.InterstitialAds;
 import com.example.mobileads.AdScreens.RedirectLinkAd;
 import com.example.mobileads.AdScreens.RewardedAds;
 import com.example.mobileads.AdScreens.TopBanner;
@@ -66,8 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
         //Interstitial Ad
         ((Button) findViewById(R.id.interstitialAd)).setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, InterstitialAds.class));
-            finish();
+//            startActivity(new Intent(MainActivity.this, InterstitialAds.class));
+//            finish();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    YeahAdsManager.showInterstitialYeahAds(MainActivity.this);
+                }
+            }, 1200);
 
         });
 
@@ -94,14 +100,5 @@ public class MainActivity extends AppCompatActivity {
             finish();
 
         });
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                YeahAdsManager.showInterstitialYeahAds();
-            }
-        }, 2300);
-
-
     }
 }
