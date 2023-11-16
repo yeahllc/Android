@@ -27,14 +27,14 @@ import com.google.android.exoplayer2.ui.StyledPlayerView;
 
 public class YeahAdsManager {
 
-    private static String myZoneId = "36";
+    private static String publisherId = "36";
     private static Activity mActivity;
 
     public static void init(Activity appActivity) {
         mActivity = appActivity;
 
         //Initialize the SDK
-        new YeahAdsInitialize(mActivity, myZoneId, new AdViewListener() {
+        new YeahAdsInitialize(mActivity, publisherId, new AdViewListener() {
             @Override
             public void onInitializationComplete() {
                 Log.e("SDK_Init_Status : ", "" + "Initialization Successfully");
