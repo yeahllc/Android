@@ -332,9 +332,6 @@ public class LoadData {
 
     public void logoutInArticleVideoAction(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("InArticleVideo", MODE_PRIVATE);
-
-        // creating a variable for editor to
-        // store data in shared preferences.
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.commit();

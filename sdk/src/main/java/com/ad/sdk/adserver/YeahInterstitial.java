@@ -25,13 +25,11 @@ public class YeahInterstitial {
 
             String getADType = new LoadData().getAdType(context).trim();
 
-            Log.e("AdType..::", "  " + getADType);
 
             if (getADType.equalsIgnoreCase("INTERSTITIAL_VID")) {
 
                 SharedPreferences sharedPreferences = context.getSharedPreferences("InterstitialVideo", MODE_PRIVATE);
                 String ad_url = sharedPreferences.getString("InterstitialVideo_URL", "No Video url");
-                Log.e("adURL..::", "  " + ad_url);
 
                 if (ad_url.equalsIgnoreCase("No Video url")) {
                     YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdFailed();
@@ -46,8 +44,6 @@ public class YeahInterstitial {
                     YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdLoaded();
                 } else {
                     YeahInterstitial.interstitialVideoAdListener.onYeahAdsAdFailed();
-
-//                    Log.d("SDK", "No Ads");
                 }
 
             }
