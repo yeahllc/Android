@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Mobile Ads</string>
     <string name="click_ad">Click Ad</string>
-    <string name="intertstial_ad">Intertstirtial Ads</string>
-    <string name="rewarded_video_ad">Rewarded Video Ad</string>
-    <string name="redirect_ad">Redirect Ad</string>
-    <string name="banner_ad">Banner Ad</string>
-    <string name="topBanner_ad">Top Banner Ad</string>
-    <string name="html_ad">HTML Ad</string>
-    <string name="html5_ad">HTML 5 Ad</string>
-    <string name="bottomSlider_ad">Bottom Slider Ad</string>
-    <string name="inArticle_ad">InArticle Ad</string>
+    <string name="banner_ad">1. Banner Ad</string>
+    <string name="topBanner_ad">2. Top Banner Ad</string>
+    <string name="redirect_ad">3. Redirect Ad</string>
+    <string name="html_ad">4. HTML Ad</string>
+    <string name="html5_ad">5. HTML 5 Ad</string>
+    <string name="intertstial_ad">6. Interstitial Ads</string>
+    <string name="rewarded_video_ad">7. Rewarded Video Ad</string>
+    <string name="bottomSlider_ad">8. Bottom Slider Ad</string>
+    <string name="inArticle_ad">9. InArticle Ad</string>
 </resources>
